@@ -1,0 +1,80 @@
+
+
+
+.main{
+    width: 100vw;
+}
+
+.gameTitle{
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 40;
+}
+
+.title{
+    font-weight: 100;
+    font-size: large;
+}
+
+.tree{
+position: absolute;
+/* width: 10vw; */
+/* justify-content: center; */
+margin-top: 200px;
+/* margin-left: 50px; */
+/* padding-right: 100px; */
+/* background-color: black; */
+}
+.newspaper {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  background-color: aqua;
+  border-radius: 100px;
+  width: 50vw;
+}
+.q1{
+    /* width: 50px;
+    height: 50px; */
+    position: absolute ;
+    top: 10%;
+    left: 30%;
+    /* background-color: black; */
+
+}
+
+.q2{
+    /* width: 50px;
+    height: 50px; */
+    position: absolute ;
+    top: 45%;
+    left: 20%;
+    /* background-color: black; */
+
+}
+.q3{
+    /* width: 50px;
+    height: 50px; */
+    position: absolute ;
+    top: 10%;
+    left: 70%;
+    /* background-color: black; */
+
+}
+
+.terms{
+    justify-content: center;
+}
+.boxTerms{
+    justify-content: center;
+    width: 100vw;   
+    height: 50px;   
+}
+
+.terms{
+    justify-content: center;
+}
