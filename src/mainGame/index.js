@@ -1,20 +1,18 @@
-import { React, useEffect, useState } from 'react';
-import bgs1 from '../assets/bgs1.png';
-import bgs2 from '../assets/bgs2.png';
 import q11 from '../assets/q11.png';
-
-
-
 import tree from '../assets/tree.png';
+
+
+
+import { useEffect, useState } from 'react';
 import './index.css';
 function MainGame() {
 
 
     const [isShaked, setIsShaked] = useState(false);
-    const animation = document.querySelector('p.animation');
-    const animationEventLog = document.querySelector('.animation-example>.event-log');
-    const applyAnimation = document.querySelector('.animation-example>button.activate');
-    let iterationCount = 0;
+    // const animation = document.querySelector('p.animation');
+    // const animationEventLog = document.querySelector('.animation-example>.event-log');
+    // const applyAnimation = document.querySelector('.animation-example>button.activate');
+    // let iterationCount = 0;
 
 
     useEffect(
@@ -24,7 +22,9 @@ function MainGame() {
             //randoom gift 
 
             // tree animate
-            const newtree = document.querySelector(".treeImg");
+            const newtree = document.querySelector(".tree");
+
+            const imgtree = document.querySelector(".imgTree");
 
             const effect = [
                 { transform: 'translatex(5px)' },
@@ -36,43 +36,59 @@ function MainGame() {
                 iterations: 10
             }
             function Shake(event) {
-                a = newtree.animate(effect, timing);
+                a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
                     setIsShaked(true);
                     console.log('isShaked:', isShaked);
-
+                    giftDrop();
                 };
             }
 
 
             // gift animate
-            const giftAnimate = document.querySelector(".q1");
+            const giftAnimate = document.querySelector(".gift1");
 
             const giftEffect = [
+
+                // { transform: 'rotate(360deg)' },
+                // { transform: 'translateY(0px)' },
+                // { transform: 'translateY(100vw) rotate(360deg)', opacity: 1 },
+                // { transform: 'translateY(100vw) rotate(360deg)', opacity: 0 },
+
                 { transform: 'translateY(0px)' },
-                { transform: 'translateY(50vw)' },
-                { transform: 'rotate(360deg)' },
+                { transform: 'translateY(100vh) rotate(360deg)', },
+                // { transform: 'translateY(100vw) rotate(360deg)', },
+
+                // { opacity: 1 },
+                // { opacity: 0 },
+
                 // {}
             ]
 
             const giftTiming = {
-                duration: 2000,
+                duration: 1000,
+                fill: "forwards",
+                // easing: "steps( end)",
+                // duration: aliceChange.effect.timing.duration / 2,
                 // iterations: 1
             }
             function giftDrop(event) {
                 gift = giftAnimate.animate(giftEffect, giftTiming);
+                gift.onfinish(() => {
+                    gift.pause();
+                })
             }
             newtree.addEventListener("click", Shake);
 
-            giftAnimate.addEventListener("click", giftDrop);
-            if (isShaked) {
-                // giftDrop
+            // giftAnimate.addEventListener("click", giftDrop);
+            // if (isShaked) {
+            //     // giftDrop
 
-            }
+            // }
 
             return () => {
                 newtree.removeEventListener("click", Shake);
-                giftAnimate.removeEventListener("click", giftDrop)
+                // giftAnimate.removeEventListener("click", giftDrop)
             };
         }, [isShaked]
     );
@@ -84,53 +100,28 @@ function MainGame() {
     //select gift
 
     return (
-        <div>
-
-            <div className='main'>
-                <div>
-                    <div className='gameTitle'>
-                        <p className='title'>Tree Shaking Game
-                        </p>
-                    </div>
+        <section className="some-area fill-height-or-more" >
+            <div className="row_one" >
+                <div className='gameTitle'>
+                    Tree Shaking Game
                 </div>
 
-                <div>
-                    <img src={bgs2} alt="bgs2 " className='bgs2' />
+            </div >
+            <div className="row_two" >
+                {/* asda */}
+                < div className='imgTree' >
+                    <img src={tree} className='tree' />
+                    <img src={q11} className='gift1' />
+                    <img src={q11} className='gift2' />
+                    <img src={q11} className='gift3' />
 
-                    <div>
-                        <div >
-                            {/* <img src={tree} alt="treeImg" className='treeImg'>
+                </ div>
 
-                            </img> */}
-                            <img src={tree} alt="treeImg" className='treeImg' />
-                            <img src={q11} alt="treeImg" className='q1' />
-                            <img src={q11} alt="treeImg" className='q2' />
-
-                            <img src={q11} alt="treeImg" className='q3' />
-
-
-
-                        </div>
-
-                        <img src={bgs1} alt="bgs1 " className='bgs1' />
-
-                    </div>
-                </div>
-
-            </div>
-
-            < div className='footer' >
-                <div class="newspaper"> Terms & Conditions</div>
-
-                <div className='boxTerms'>
-                    <div className='terms'>
-                        Terms & Conditions
-                    </div>
-                </div>
-            </ div>
-
-        </div>
-
+            </div >
+            <div className="row_three" >
+                Row 3
+            </div >
+        </section >
 
     );
 }

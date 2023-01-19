@@ -1,106 +1,86 @@
-
-
-
-.main{
-    width: 100vw;
-}
-
-.gameTitle{
-    position: absolute;
+html,
+#root,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    justify-content: center;
-    color: aliceblue;
-    font-size: 40;
-}
+  }
+  
+  .row_one {
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+    /* display: flex; */
+    background: blue;
+    background-image: url('../assets/bgs2.png');
+    flex: 3
+    
+  }
 
-.title{
-    font-weight: 100;
-    font-size: large;
-}
-
-.bgs1{
-    margin-top: -20px;
-    height: 100vw;
-    width: 500px;
-}
-
-.bgs2{
-    height: 100vw;
-    width: 500px;
-}
-
-.tree{
-position: absolute;
-/* width: 10vw; */
-/* justify-content: center; */
-margin-top: 200px;
-/* margin-left: 50px; */
-/* padding-right: 100px; */
+  .gameTitle{
+    /* background-color: black; */
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+  }
+  
+  .row_two {
+    position: relative;
+    background: wheat;
+    background-image: url('../assets/bgs1.png');
+    flex: 2;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .divqq{
+    /* width: 100px; */
+    /* height: 100px; */
+    /* background-color: black; */
+  }
+  
+  .row_three {
+    background: yellow;
+    height: 50px;
+  }
+  
+  .fill-height-or-more {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fill-height-or-more > div {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+  .tree{
+    width: 100%;
 /* background-color: black; */
-}
-.treeImg{
+  }
+.gift1{
     position: absolute;
-    /* background-color: black; */
-    /* margin-top: -200px; */
-    /* margin-top: 10%; */
     top: 10%;
+    left: 40%;
 }
-.newspaper {
-  padding: 0.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: white;
-  cursor: pointer;
-  background-color: aqua;
-  border-radius: 100px;
-  width: 50vw;
-}
-.q1{
-    /* width: 50px;
-    height: 50px; */
-    position: absolute ;
-    top: 30%;
-    left: 30%;
-    /* background-color: black; */
-
-}
-
-.q2{
-    /* width: 50px;
-    height: 50px; */
-    position: absolute ;
-    top: 45%;
-    left: 20%;
-    /* background-color: black; */
-
-}
-.q3{
-    /* width: 50px;
-    height: 50px; */
-    position: absolute ;
-    top: 30%;
-    left: 70%;
-    /* background-color: black; */
-
-}
-
-.terms{
-    justify-content: center;
-}
-.boxTerms{
-    justify-content: center;
-    width: 100vw;   
-    height: 50px;   
-}
-
-.terms{
-    justify-content: center;
-}
-/* .footer{
-    background-color: black;
+.gift2{
     position: absolute;
-    margin-top: -100px;
-    justify-content: center;
-    width: 100vw;
-    height: ;
-} */
+    top: 30%;
+    left: 60%;
+}
+.gift3{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+
+  .imgTree{
+    /* background-image: url('../assets/tree.png');
+    aspect-ratio: calc(387 / 400);
+    width: 100%; */
+    position: absolute;
+    bottom: 30%;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
+  }
