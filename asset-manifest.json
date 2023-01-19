@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/shaking_tree/static/css/main.b75b708f.css",
+    "main.js": "/shaking_tree/static/js/main.c83dac0e.js",
+    "static/js/787.309496b8.chunk.js": "/shaking_tree/static/js/787.309496b8.chunk.js",
+    "static/media/tree.png": "/shaking_tree/static/media/tree.d5ab7bda387efcc8a430.png",
+    "index.html": "/shaking_tree/index.html",
+    "main.b75b708f.css.map": "/shaking_tree/static/css/main.b75b708f.css.map",
+    "main.c83dac0e.js.map": "/shaking_tree/static/js/main.c83dac0e.js.map",
+    "787.309496b8.chunk.js.map": "/shaking_tree/static/js/787.309496b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b75b708f.css",
+    "static/js/main.c83dac0e.js"
+  ]
+}
