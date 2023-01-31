@@ -142,7 +142,7 @@ function MainGame() {
                                     close()
                                     console.log('back');
                                     window.location.reload(false)
-                                }}>Play align</button>
+                                }}>Play </button>
                         </div>
 
                     </div>
