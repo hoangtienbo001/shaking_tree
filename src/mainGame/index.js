@@ -75,14 +75,14 @@ function MainGame() {
             }
 
             newtree.addEventListener("click", ShakeAbc);
-            // window.addEventListener('shake', ShakeAbc, false);
+            window.addEventListener('shake', ShakeAbc, false);
 
 
             return () => {
                 newtree.removeEventListener("click", ShakeAbc);
-                // newtree.removeEventListener("shake", ShakeAbc);
+                newtree.removeEventListener("shake", ShakeAbc);
                 // window.removeEventListener('shake', ShakeAbc, false);
-                // myShakeEvent.stop();
+                myShakeEvent.stop();
 
             };
         }, [isShaked, listGift, randomNim, randomNumber]
