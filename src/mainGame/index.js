@@ -46,12 +46,12 @@ function MainGame() {
             }
 
             function Shake(event) {
-                console.log(Math.floor(Math.random() * listGift.length));
-                setRandomNum(Math.floor(Math.random() * listGift.length));
-                console.log("click q", randomNim);
+
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
-
+                    console.log(Math.floor(Math.random() * listGift.length));
+                    setRandomNum(Math.floor(Math.random() * listGift.length));
+                    console.log("click q", randomNim);
                     giftDrop();
 
                 };
