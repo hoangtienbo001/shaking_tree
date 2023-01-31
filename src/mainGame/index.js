@@ -6,10 +6,9 @@ import Popup from 'reactjs-popup';
 import tree from '../assets/tree.png';
 
 import { useEffect, useState } from 'react';
+import Shake  from 'shake.js';
 import './index.css';
 function MainGame() {
-
-
     const [isShaked, setIsShaked] = useState(false);
 
     var listGift = ['gift1', 'gift2', 'gift3'];
@@ -21,6 +20,12 @@ function MainGame() {
 
     useEffect(
         () => {
+            //shake phone
+            var myShakeEvent = new Shake({
+                threshold: 15, // optional shake strength threshold
+                timeout: 1000 // optional, determines the frequency of event generation
+            });
+            myShakeEvent.start();
             let a;
             let gift;
 
@@ -47,7 +52,7 @@ function MainGame() {
                 iterations: 10
             }
 
-            function Shake(event) {
+            function ShakeAbc(event) {
                 // setTurnPlay(turnPlay - 1);
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
@@ -62,25 +67,30 @@ function MainGame() {
                 console.log(listGift[randomNumber]);
                 gift = giftAnimate.animate(giftEffect, giftTiming);
                 gift.onfinish = () => {
-                    gift.pause();
-                    console.log("drop end");
                     setIsShaked(true);
+                    console.log('gift animate end');
 
                 }
+
             }
 
-            newtree.addEventListener("click", Shake);
+            newtree.addEventListener("click", ShakeAbc);
+            // window.addEventListener('shake', ShakeAbc, false);
+
 
             return () => {
-                newtree.removeEventListener("click", Shake);
+                newtree.removeEventListener("click", ShakeAbc);
+                // newtree.removeEventListener("shake", ShakeAbc);
+                // window.removeEventListener('shake', ShakeAbc, false);
+                // myShakeEvent.stop();
 
             };
         }, [isShaked, listGift, randomNim, randomNumber]
     );
 
-
     return (
         <section className="some-area fill-height-or-more" >
+
             <div className="row_one" >
                 <div className='gameTitle'>
                     Tree Shaking Game
