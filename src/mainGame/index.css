@@ -22,6 +22,13 @@ body {
     color: white;
     font-size: x-large;
     font-weight: 700;
+    /* margin-bottom: 50px; */
+  }
+
+  .giftName{
+    color: black;
+    font-size: x-large;
+    font-weight: 700;
   }
   
   .row_two {
@@ -46,6 +53,18 @@ body {
     align-items: center;
     /* border-top-left-radius: 100px; */
     /* border-top-right-radius: 100px; */
+  }
+  .boxButton{
+    margin-top: 20px;
+  }
+  .buttonExit{
+    width: 60px;
+    height: 30px;
+  }
+  .buttonBack{
+    margin-inline: 20px;
+    width: 80px;
+    height: 30px;
   }
   .footer{
     position: absolute;
@@ -81,6 +100,7 @@ body {
     position: absolute;
     top: 10%;
     left: 40%;
+    
 }
 .gift2{
     position: absolute;

@@ -116,29 +116,35 @@ function MainGame() {
                         {/* <a className="close" onClick={close}>
                             ×
                         </a> */}
-                        <div className="header"> Modal Title qwe </div>
+                        {/* <div className="header"> Modal Title qwe </div> */}
                         {
-                            listGift[randomNim] === 'gift1' && <div>
+                            listGift[randomNim] === 'gift1' && <div className='giftName'>
                                 500k
                             </div>
                         }
                         {
-                            listGift[randomNim] === 'gift2' && <div>
+                            listGift[randomNim] === 'gift2' && <div className='giftName'>
                                 100k
                             </div>
                         }
                         {
-                            listGift[randomNim] === 'gift3' && <div>
+                            listGift[randomNim] === 'gift3' && <div className='giftName'>
                                 co cai nit :v
                             </div>
                         }
-                        <button onClick={close}>Exit</button>
 
-                        <button onClick={() => {
-                            close()
-                            console.log('back');
-                            window.location.reload(false)
-                        }}>Play align</button>
+                        <div className='boxButton'>
+                            <button onClick={close} className="buttonExit">Exit</button>
+
+                            <button
+                                className='buttonBack'
+                                onClick={() => {
+                                    close()
+                                    console.log('back');
+                                    window.location.reload(false)
+                                }}>Play align</button>
+                        </div>
+
                     </div>
                 </div>}
             </Popup>
