@@ -41,7 +41,7 @@ body {
   .row_three {
     /* position: absolute; */
     height: 50px;
-    background-color: grey;
+    background-color: white;
     justify-content: center;
     align-items: center;
     /* border-top-left-radius: 100px; */
@@ -92,7 +92,10 @@ body {
     top: 50%;
     left: 20%;
 }
-
+.boxopen{
+  width: 100%;
+  height: 100%;
+}
 
   .imgTree{
     /* background-image: url('../assets/tree.png');
@@ -107,8 +110,9 @@ body {
   /* index.css */ 
 .modal {
   font-size: 12px;
-  background-color: aquamarine;
-  width: 80vw;
+  /* background-color: antiquewhite; */
+  /* background-image: url('../assets/openGift.png'); */
+  width: 50vw;
   height: 20vh;
 }
 .modal > .header {

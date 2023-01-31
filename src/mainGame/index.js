@@ -1,6 +1,8 @@
+import openGift from '../assets/openGift.png';
 import q11 from '../assets/q11.png';
 import q22 from '../assets/q22.png';
 import q33 from '../assets/q33.png';
+
 
 import Popup from 'reactjs-popup';
 import tree from '../assets/tree.png';
@@ -71,7 +73,6 @@ function MainGame() {
             newtree.addEventListener("click", ShakeAbc);
             window.addEventListener('shake', ShakeAbc, false);
 
-
             return () => {
                 newtree.removeEventListener("click", ShakeAbc);
                 newtree.removeEventListener("shake", ShakeAbc);
@@ -99,18 +100,19 @@ function MainGame() {
                 </ div>
 
             </div >
-            <div className='turnPlay'>
+            {/* <div className='turnPlay'>
                 <div>Your Turns</div>
                 <div>{turnPlay}</div>
-            </div>
+            </div> */}
             <div className="row_three" >
                 <div className='footer'>
                     Terms & Condition
                 </div>
             </div >
-            <Popup modal open={isShaked}>
+            <Popup modal open={isShaked} closeOnEscape={false} closeOnDocumentClick={false} overlayStyle={{ backgroundColor: 'rgba(223, 208, 215, 0.5)' }}>
                 {close => <div>
                     <div className="modal">
+                        <img src={openGift} className='boxopen' />
                         {/* <a className="close" onClick={close}>
                             ×
                         </a> */}
@@ -127,7 +129,7 @@ function MainGame() {
                         }
                         {
                             listGift[randomNim] === 'gift3' && <div>
-                                chuc ban may man lan sau !
+                                co cai nit :v
                             </div>
                         }
                         <button onClick={close}>Exit</button>
