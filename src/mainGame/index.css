@@ -108,7 +108,8 @@ body {
 .modal {
   font-size: 12px;
   background-color: aquamarine;
-
+  width: 80vw;
+  height: 20vh;
 }
 .modal > .header {
   width: 100%;
@@ -117,6 +118,13 @@ body {
   text-align: center;
   padding: 5px;
 }
+/* .modal > .footer {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+} */
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
@@ -129,7 +137,8 @@ body {
   padding: 10px 5px;
   text-align: center;
 }
-.modal > .close {
+/* .modal > .close {
+
   cursor: pointer;
   position: absolute;
   display: block;
@@ -141,4 +150,9 @@ body {
   background: #ffffff;
   border-radius: 18px;
   border: 1px solid #cfcece;
+} */
+
+.turnPlay{
+  /* bottom: 0;
+  margin-top: 300px; */
 }

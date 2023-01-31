@@ -17,6 +17,8 @@ function MainGame() {
     var randomNumber = Math.floor(Math.random() * listGift.length);
     const [randomNim, setRandomNum] = useState(0);
 
+    const [turnPlay, setTurnPlay] = useState(100);
+
     useEffect(
         () => {
             let a;
@@ -31,9 +33,9 @@ function MainGame() {
                 { transform: 'translatex(-5px)' }
             ];
             const giftEffect = [
-                { transform: 'rotate(360deg)' },
-                { transform: 'translateY(0px)' },
-                { transform: 'translateY(100vw) rotate(360deg)', },
+                // { transform: 'rotate(360deg)' },
+                // { transform: 'translateY(0px)' },
+                { transform: 'translateY(50vw) rotate(360deg)', },
 
             ]
             const giftTiming = {
@@ -46,6 +48,7 @@ function MainGame() {
             }
 
             function Shake(event) {
+                // setTurnPlay(turnPlay - 1);
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
                     console.log(Math.floor(Math.random() * listGift.length));
@@ -70,6 +73,7 @@ function MainGame() {
 
             return () => {
                 newtree.removeEventListener("click", Shake);
+
             };
         }, [isShaked, listGift, randomNim, randomNumber]
     );
@@ -88,8 +92,14 @@ function MainGame() {
                     <img src={q11} className='gift1' />
                     <img src={q22} className='gift2' />
                     <img src={q33} className='gift3' />
+
                 </ div>
+
             </div >
+            <div className='turnPlay'>
+                <div>luot choi</div>
+                <div>{turnPlay}</div>
+            </div>
             <div className="row_three" >
                 <div className='footer'>
                     Terms & Condition
