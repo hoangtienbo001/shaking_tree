@@ -46,7 +46,6 @@ function MainGame() {
             }
 
             function Shake(event) {
-
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
                     console.log(Math.floor(Math.random() * listGift.length));
@@ -57,9 +56,7 @@ function MainGame() {
                 };
             }
             function giftDrop(event) {
-
                 console.log(listGift[randomNumber]);
-
                 gift = giftAnimate.animate(giftEffect, giftTiming);
                 gift.onfinish = () => {
                     gift.pause();
@@ -76,6 +73,7 @@ function MainGame() {
             };
         }, [isShaked, listGift, randomNim, randomNumber]
     );
+
 
     return (
         <section className="some-area fill-height-or-more" >
@@ -100,9 +98,9 @@ function MainGame() {
             <Popup modal open={isShaked}>
                 {close => <div>
                     <div className="modal">
-                        <a className="close" onClick={close}>
+                        {/* <a className="close" onClick={close}>
                             ×
-                        </a>
+                        </a> */}
                         <div className="header"> Modal Title qwe </div>
                         {
                             listGift[randomNumber] === 'gift1' && <div>
@@ -119,7 +117,13 @@ function MainGame() {
                                 chuc ban may man lan sau !
                             </div>
                         }
+                        <button onClick={close}>Nghi</button>
 
+                        <button onClick={() => {
+                            close()
+                            console.log('back');
+                            window.location.reload(false)
+                        }}>Choi lai</button>
                     </div>
                 </div>}
             </Popup>
