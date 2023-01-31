@@ -10,12 +10,9 @@ import Shake from 'shake.js';
 import './index.css';
 function MainGame() {
     const [isShaked, setIsShaked] = useState(false);
-
     var listGift = ['gift1', 'gift2', 'gift3'];
-
     var randomNumber = Math.floor(Math.random() * listGift.length);
     const [randomNim, setRandomNum] = useState(Math.floor(Math.random() * listGift.length));
-
     const [turnPlay, setTurnPlay] = useState(100);
 
     useEffect(
@@ -29,7 +26,6 @@ function MainGame() {
             let a;
             let gift;
             console.log(Math.floor(Math.random() * listGift.length));
-            // setRandomNum(Math.floor(Math.random() * listGift.length));
             console.log("click q", randomNim);
 
             const newtree = document.querySelector(".tree");
@@ -41,8 +37,6 @@ function MainGame() {
                 { transform: 'translatex(-5px)' }
             ];
             const giftEffect = [
-                // { transform: 'rotate(360deg)' },
-                // { transform: 'translateY(0px)' },
                 { transform: 'translateY(50vw) rotate(360deg)', },
 
             ]
@@ -56,7 +50,6 @@ function MainGame() {
             }
 
             function ShakeAbc(event) {
-                // setTurnPlay(turnPlay - 1);
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
 
@@ -82,7 +75,6 @@ function MainGame() {
             return () => {
                 newtree.removeEventListener("click", ShakeAbc);
                 newtree.removeEventListener("shake", ShakeAbc);
-                // window.removeEventListener('shake', ShakeAbc, false);
                 myShakeEvent.stop();
 
             };
@@ -108,7 +100,7 @@ function MainGame() {
 
             </div >
             <div className='turnPlay'>
-                <div>luot choi</div>
+                <div>Your Turns</div>
                 <div>{turnPlay}</div>
             </div>
             <div className="row_three" >
@@ -138,13 +130,13 @@ function MainGame() {
                                 chuc ban may man lan sau !
                             </div>
                         }
-                        <button onClick={close}>Nghi</button>
+                        <button onClick={close}>Exit</button>
 
                         <button onClick={() => {
                             close()
                             console.log('back');
                             window.location.reload(false)
-                        }}>Choi lai</button>
+                        }}>Play align</button>
                     </div>
                 </div>}
             </Popup>
