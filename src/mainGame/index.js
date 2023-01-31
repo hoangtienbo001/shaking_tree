@@ -6,7 +6,7 @@ import Popup from 'reactjs-popup';
 import tree from '../assets/tree.png';
 
 import { useEffect, useState } from 'react';
-import Shake  from 'shake.js';
+import Shake from 'shake.js';
 import './index.css';
 function MainGame() {
     const [isShaked, setIsShaked] = useState(false);
@@ -14,7 +14,7 @@ function MainGame() {
     var listGift = ['gift1', 'gift2', 'gift3'];
 
     var randomNumber = Math.floor(Math.random() * listGift.length);
-    const [randomNim, setRandomNum] = useState(0);
+    const [randomNim, setRandomNum] = useState(Math.floor(Math.random() * listGift.length));
 
     const [turnPlay, setTurnPlay] = useState(100);
 
@@ -28,10 +28,13 @@ function MainGame() {
             myShakeEvent.start();
             let a;
             let gift;
+            console.log(Math.floor(Math.random() * listGift.length));
+            // setRandomNum(Math.floor(Math.random() * listGift.length));
+            console.log("click q", randomNim);
 
             const newtree = document.querySelector(".tree");
             const imgtree = document.querySelector(".imgTree");
-            const giftAnimate = document.querySelector('.' + listGift[randomNumber]);
+            const giftAnimate = document.querySelector('.' + listGift[randomNim]);
 
             const effect = [
                 { transform: 'translatex(5px)' },
@@ -56,15 +59,13 @@ function MainGame() {
                 // setTurnPlay(turnPlay - 1);
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
-                    console.log(Math.floor(Math.random() * listGift.length));
-                    setRandomNum(Math.floor(Math.random() * listGift.length));
-                    console.log("click q", randomNim);
+
                     giftDrop();
 
                 };
             }
             function giftDrop(event) {
-                console.log(listGift[randomNumber]);
+                console.log(listGift[randomNim]);
                 gift = giftAnimate.animate(giftEffect, giftTiming);
                 gift.onfinish = () => {
                     setIsShaked(true);
@@ -123,17 +124,17 @@ function MainGame() {
                         </a> */}
                         <div className="header"> Modal Title qwe </div>
                         {
-                            listGift[randomNumber] === 'gift1' && <div>
+                            listGift[randomNim] === 'gift1' && <div>
                                 500k
                             </div>
                         }
                         {
-                            listGift[randomNumber] === 'gift2' && <div>
+                            listGift[randomNim] === 'gift2' && <div>
                                 100k
                             </div>
                         }
                         {
-                            listGift[randomNumber] === 'gift3' && <div>
+                            listGift[randomNim] === 'gift3' && <div>
                                 chuc ban may man lan sau !
                             </div>
                         }
