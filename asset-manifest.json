@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/shaking_tree/static/css/main.10fdc071.css",
-    "main.js": "/shaking_tree/static/js/main.d372c5fd.js",
+    "main.js": "/shaking_tree/static/js/main.0ab4533c.js",
     "static/js/787.309496b8.chunk.js": "/shaking_tree/static/js/787.309496b8.chunk.js",
     "static/media/tree.png": "/shaking_tree/static/media/tree.d5ab7bda387efcc8a430.png",
     "index.html": "/shaking_tree/index.html",
     "main.10fdc071.css.map": "/shaking_tree/static/css/main.10fdc071.css.map",
-    "main.d372c5fd.js.map": "/shaking_tree/static/js/main.d372c5fd.js.map",
+    "main.0ab4533c.js.map": "/shaking_tree/static/js/main.0ab4533c.js.map",
     "787.309496b8.chunk.js.map": "/shaking_tree/static/js/787.309496b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.10fdc071.css",
-    "static/js/main.d372c5fd.js"
+    "static/js/main.0ab4533c.js"
   ]
 }
