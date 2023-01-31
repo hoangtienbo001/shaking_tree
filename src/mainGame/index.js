@@ -2,9 +2,8 @@ import q11 from '../assets/q11.png';
 import q22 from '../assets/q22.png';
 import q33 from '../assets/q33.png';
 
-import tree from '../assets/tree.png';
 import Popup from 'reactjs-popup';
-import Content from "./content";
+import tree from '../assets/tree.png';
 
 import { useEffect, useState } from 'react';
 import './index.css';
@@ -12,16 +11,16 @@ function MainGame() {
 
 
     const [isShaked, setIsShaked] = useState(false);
- 
+
     var listGift = ['gift1', 'gift2', 'gift3'];
 
     var randomNumber = Math.floor(Math.random() * listGift.length);
+    const [randomNim, setRandomNum] = useState(0);
 
     useEffect(
         () => {
             let a;
             let gift;
-            console.log(listGift[randomNumber]);
 
             const newtree = document.querySelector(".tree");
             const imgtree = document.querySelector(".imgTree");
@@ -47,20 +46,27 @@ function MainGame() {
             }
 
             function Shake(event) {
+                console.log(Math.floor(Math.random() * listGift.length));
+                setRandomNum(Math.floor(Math.random() * listGift.length));
+                console.log("click q", randomNim);
                 a = imgtree.animate(effect, timing);
                 a.onfinish = () => {
-                    setIsShaked(true);
+
                     giftDrop();
 
                 };
             }
             function giftDrop(event) {
-                gift = giftAnimate.animate(giftEffect, giftTiming);
-                gift.onfinish(() => {
-                    console.log('cocl');
 
+                console.log(listGift[randomNumber]);
+
+                gift = giftAnimate.animate(giftEffect, giftTiming);
+                gift.onfinish = () => {
                     gift.pause();
-                })
+                    console.log("drop end");
+                    setIsShaked(true);
+
+                }
             }
 
             newtree.addEventListener("click", Shake);
@@ -68,7 +74,7 @@ function MainGame() {
             return () => {
                 newtree.removeEventListener("click", Shake);
             };
-        }, [isShaked, listGift, randomNumber]
+        }, [isShaked, listGift, randomNim, randomNumber]
     );
 
     return (
@@ -88,7 +94,7 @@ function MainGame() {
             </div >
             <div className="row_three" >
                 <div className='footer'>
-                     Terms & Condition
+                    Terms & Condition
                 </div>
             </div >
             <Popup modal open={isShaked}>
@@ -99,19 +105,19 @@ function MainGame() {
                         </a>
                         <div className="header"> Modal Title qwe </div>
                         {
-                           listGift[randomNumber]==='gift1' && <div>
-                            500k 
-                           </div> 
+                            listGift[randomNumber] === 'gift1' && <div>
+                                500k
+                            </div>
                         }
-                                                {
-                           listGift[randomNumber]==='gift2' && <div>
-                            100k
-                           </div> 
+                        {
+                            listGift[randomNumber] === 'gift2' && <div>
+                                100k
+                            </div>
                         }
-                                                {
-                           listGift[randomNumber]==='gift3' && <div>
-                            chuc ban may man lan sau !
-                           </div> 
+                        {
+                            listGift[randomNumber] === 'gift3' && <div>
+                                chuc ban may man lan sau !
+                            </div>
                         }
 
                     </div>
